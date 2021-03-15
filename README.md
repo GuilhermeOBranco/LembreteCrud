@@ -1,6 +1,6 @@
 # ClienteLembrete
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+a simple CRUD of reminders, for learning with Angular!
 
 ## Development server
 
