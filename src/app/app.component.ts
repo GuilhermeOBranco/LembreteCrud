@@ -1,21 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ErrorMsgComponent } from './compartilhado/error-msg/error-msg.component';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent  {
+
   title = 'cliente-lembrete';
 
-  @ViewChild(ErrorMsgComponent) errorMessageComponent: ErrorMsgComponent;
-
-  constructor()
-  {
-  }
-  
-  ngOnInit(): void {
-    this.errorMessageComponent.setError('mensagem de erro');
-  }
 }

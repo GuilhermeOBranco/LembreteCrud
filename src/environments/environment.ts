@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ApiUrl: 'https://deviup.com.br:3001/api/lembrete'
+  ApiUrl: 'https://deviup.com.br:3001/api'
 };
 
 /*

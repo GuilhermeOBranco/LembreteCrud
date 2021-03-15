@@ -1,12 +1,10 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-dark me-5 ms-5">
   <div class="container-fluid">
-    <a class="navbar-brand">Navbar</a>
+    <h3> <a style="text-decoration: none; color: white;" routerLink=""> Meus Lembretes</a></h3>
     <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success ml-2" type="submit">Buscar</button>
     </form>
   </div>
 </nav>
 <router-outlet></router-outlet>
-
-<app-error-msg></app-error-msg>

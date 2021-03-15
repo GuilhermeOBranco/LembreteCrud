@@ -1,0 +1,79 @@
+<div class="container mt-3">
+    <h2 class="mb-3 text-center">Gerencie todos os seus lembretes aqui ;)</h2>
+    <div *ngIf="existeLembrete()">
+        <button routerLink="adicionar" class="ml-auto p-2 mb-3 btn btn-success h-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle"
+                viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg> Novo</button>
+    </div>
+
+    <div class="container d-flex">
+
+        <div class="container">
+            <div *ngIf="!existeLembrete()">
+                <h4>Ainda não possui lembretes cadastrados? Bora cadastrar!</h4>
+                <button routerLink="adicionar" class="ml-auto p-2 btn btn-success h-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg> Novo</button>
+            </div>
+            <!-- Loop para criar cards aos lembretes -->
+            <div class="d-flex flex-row bd-highlight ml-5">
+                <div *ngFor="let lembrete of lembretesAlta" class="p-2 bd-highlight container-cards">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header ALTA">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{lembrete.prioridade}}</h5>
+                            <p class="card-text">{{lembrete.conteudo}}</p>
+                            <div class="card-footer">
+                                <a href="#" routerLink="editar/{{lembrete.id}}" class="btn btn-primary">Editar</a>
+                                <a href="#" (click)="deletaLembrete(lembrete.id)" class="btn btn-danger">Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex flex-row bd-highlight ml-5">
+                <div *ngFor="let lembrete of lembretesMedia" class="p-2 bd-highlight container-cards">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header MEDIA">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{lembrete.prioridade}}</h5>
+                            <p class="card-text">{{lembrete.conteudo}}</p>
+                            <div class="card-footer">
+                                <a routerLink="editar/{{lembrete.id}}" class="btn btn-primary">Editar</a>
+                                <a (click)="deletaLembrete(lembrete.id)" class="btn btn-danger">Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="d-flex flex-row bd-highlight ml-5">
+                <div *ngFor="let lembrete of lembretesBaixa" class="p-2 bd-highlight container-cards">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-header BAIXA">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{lembrete.prioridade}}</h5>
+                            <p class="card-text">{{lembrete.conteudo}}</p>
+                            <div class="card-footer">
+                                <a href="#" routerLink="editar/{{lembrete.id}}" class="btn btn-primary">Editar</a>
+                                <a href="#" (click)="deletaLembrete(lembrete.id)" class="btn btn-danger">Excluir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

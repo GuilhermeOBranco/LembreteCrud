@@ -1,4 +1,4 @@
-type prioridade = 'BAIXA' | 'MÉDIA'| 'ALTA';
+type prioridade = 'BAIXA' | 'MEDIA'| 'ALTA';
 
 export interface Lembrete {
     id: number;
